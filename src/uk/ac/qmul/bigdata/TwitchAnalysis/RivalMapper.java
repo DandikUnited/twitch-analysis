@@ -23,6 +23,7 @@ public class RivalMapper extends Mapper<Object, Text, Text, IntWritable> {
 	            startIndex = StringUtils.ordinalIndexOf(dump,"	",2) + 1;
 	            
 	            		//data.set(hashtagarray[i]);
+	            		//bla bla
 	            		context.write(data, one);
 	            		}
 	            	}
