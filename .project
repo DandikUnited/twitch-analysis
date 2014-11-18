@@ -18,12 +18,12 @@
 		<link>
 			<name>classes</name>
 			<type>2</type>
-			<location>/homes/eka30/workspace/TwitchAnalysis/classes</location>
+			<location>PROJECT_LOC/classes</location>
 		</link>
 		<link>
 			<name>src</name>
 			<type>2</type>
-			<location>/homes/eka30/workspace/TwitchAnalysis/src</location>
+			<location>PROJECT_LOC/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
