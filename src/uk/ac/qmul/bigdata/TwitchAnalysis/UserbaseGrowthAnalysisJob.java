@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -18,10 +19,10 @@ public class UserbaseGrowthAnalysisJob {
 
 			Job job = new Job(conf);
 			job.setJarByClass(UserbaseGrowthAnalysisJob.class);
-			job.setMapperClass(RivalMapper.class);
-			job.setCombinerClass(RivalReducer.class);
-			job.setReducerClass(RivalReducer.class);
-			job.setMapOutputKeyClass(Text.class);
+			job.setMapperClass(UserbaseGrowthMapper.class);
+			job.setCombinerClass(UserbaseGrowthReducer.class);
+			job.setReducerClass(UserbaseGrowthReducer.class);
+			job.setMapOutputKeyClass(LongWritable.class);
 			job.setMapOutputValueClass(IntWritable.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
