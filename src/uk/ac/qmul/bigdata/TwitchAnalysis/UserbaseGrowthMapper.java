@@ -13,11 +13,12 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 
 public class UserbaseGrowthMapper extends Mapper<Object, TwitchDataRecord, Text, IntWritable> { 
-
+		private Text textDate = new Text();
 	    public void map(Object key, TwitchDataRecord value, Context context) throws IOException, InterruptedException {
-	    	Text a = new Text();
-	    	String b = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
-	    	a.set(b);
-	    	context.write(a, new IntWritable(1));
+	    	
+	    	String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
+	    	textDate.set(date);
+	    	
+	    	context.write(textDate, value.getViewers());
 	    }
 }
