@@ -22,7 +22,7 @@ public class UserbaseGrowthAnalysisJob {
 			job.setMapperClass(UserbaseGrowthMapper.class);
 			job.setCombinerClass(UserbaseGrowthReducer.class);
 			job.setReducerClass(UserbaseGrowthReducer.class);
-			job.setMapOutputKeyClass(LongWritable.class);
+			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);

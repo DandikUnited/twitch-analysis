@@ -182,9 +182,7 @@ public class TwitchDataRecord implements WritableComparable<TwitchDataRecord> {
 		if (obj instanceof TwitchDataRecord) {
 			TwitchDataRecord st = (TwitchDataRecord) obj;
 			return this.user.equals(st.getUser())
-					&& this.timeStamp.equals(st.getTimeStamp()); // id is unique
-																	// in
-																	// twitter
+					&& this.timeStamp.equals(st.getTimeStamp()); 
 		}
 		return false;
 	}
