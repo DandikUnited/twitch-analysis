@@ -12,16 +12,16 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.StringUtils;
 
-public class UserbaseGrowthAnalysisJob {
+public class ViewersGrowthAnalysisJob {
 		public static void runJob(String[] input, String output) throws Exception {
 
 			Configuration conf = new Configuration();
 
 			Job job = new Job(conf);
-			job.setJarByClass(UserbaseGrowthAnalysisJob.class);
-			job.setMapperClass(UserbaseGrowthMapper.class);
-			job.setCombinerClass(UserbaseGrowthReducer.class);
-			job.setReducerClass(UserbaseGrowthReducer.class);
+			job.setJarByClass(ViewersGrowthAnalysisJob.class);
+			job.setMapperClass(ViewersGrowthMapper.class);
+			job.setCombinerClass(ViewersGrowthReducer.class);
+			job.setReducerClass(ViewersGrowthReducer.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
 			

@@ -12,7 +12,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 
-public class UserbaseGrowthMapper extends Mapper<Object, TwitchDataRecord, Text, IntWritable> { 
+public class ViewersGrowthMapper extends Mapper<Object, TwitchDataRecord, Text, IntWritable> { 
 		private Text textDate = new Text();
 	    public void map(Object key, TwitchDataRecord value, Context context) throws IOException, InterruptedException {
 	    	
