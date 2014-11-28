@@ -8,16 +8,21 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 public class RivalReducer extends
 		Reducer<Text, IntWritable, Text, IntWritable> {
+	
+	private IntWritable result = new IntWritable(0);
+	
 
-	@Override
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
-
-		int sum = 0;
-		for(IntWritable i: values)
-			sum += i.get();
 		
-		context.write(key, new IntWritable(sum));
+		int sum = 0;
+		for (IntWritable value : values) {
+			sum += value.get();
+
+		}
+		result.set(sum);
+		context.write(key, result);
+
 	}
 
 }

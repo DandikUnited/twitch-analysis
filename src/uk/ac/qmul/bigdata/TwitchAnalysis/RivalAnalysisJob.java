@@ -19,11 +19,10 @@ public class RivalAnalysisJob {
 			Job job = new Job(conf);
 			job.setJarByClass(RivalAnalysisJob.class);
 			job.setMapperClass(RivalMapper.class);
-			job.setCombinerClass(RivalReducer.class);
 			job.setReducerClass(RivalReducer.class);
+			job.setCombinerClass(RivalAnalysisCombiner.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
-			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
 			Path outputPath = new Path(output);
