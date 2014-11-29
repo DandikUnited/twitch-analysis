@@ -10,6 +10,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Mapper.Context;
 import org.apache.commons.lang.StringUtils;
 
+import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataRecord;
+
 public class MonthlyPopularityMapper extends
 		Mapper<Object, TwitchDataRecord, Text, IntWritable> {
 

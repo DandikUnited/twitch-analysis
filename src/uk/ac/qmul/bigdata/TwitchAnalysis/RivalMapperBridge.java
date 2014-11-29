@@ -7,15 +7,15 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class RivalMapperBridge extends Mapper<Text, IntWritable, Text, IntWritable>{
-private IntWritable result = new IntWritable(0);
+public class RivalMapperBridge extends Mapper<Object, Object, Text, IntWritable>{
 	
 
-	public void map(Text key, IntWritable value, Context context)
+	public void map(Object key, Object value, Context context)
 			throws IOException, InterruptedException {
-		
-		
-		context.write(key, value);
+		String[] bla = value.toString().split("\t");
+		int foo = Integer.parseInt(bla[2]);
+		IntWritable go = new IntWritable(foo);
+		context.write(new Text(bla[0]+"\t"+bla[1]), go);
 
 	}
 

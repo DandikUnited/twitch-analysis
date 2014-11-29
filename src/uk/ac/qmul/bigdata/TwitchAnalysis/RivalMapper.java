@@ -19,12 +19,14 @@ public class RivalMapper extends
 		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
 		
 		String con = value.getUser().toString() + "\t"
-				+ date + "\t" + value.getGame();
+				+ date;
 
 		if (value.getGame().toString().toLowerCase().contains("league of")) {
+			con += "\t"+"League of Legends";
 			context.write(new Text(con), value.getViewers());
 
 		} else if (value.getGame().toString().toLowerCase().contains("dota")) {
+			con += "\t"+"Dota 2";
 			context.write(new Text(con), value.getViewers());
 
 		}

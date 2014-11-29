@@ -11,6 +11,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.StringUtils;
 
+import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataInputFormat;
+
 public class MonthlyPopularityJob {
 	public static void runJob(String[] input, String output) throws Exception {
 
