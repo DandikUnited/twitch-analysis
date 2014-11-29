@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
 public class RivalAnalysisCombiner extends
-		Mapper<Text, IntWritable, Text, IntWritable> {
+		Reducer<Text, IntWritable, Text, IntWritable> {
 
 	private IntWritable result;
 
