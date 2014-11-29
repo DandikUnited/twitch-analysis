@@ -8,8 +8,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class RivalAnalysisCombiner extends
-		Mapper<Text, IntWritable, Text, IntWritable> {
+public class RivalReducerPerChanell extends
+		Reducer<Text, IntWritable, Text, IntWritable> {
 
 	private IntWritable result;
 

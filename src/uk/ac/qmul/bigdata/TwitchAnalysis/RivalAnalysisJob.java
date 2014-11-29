@@ -19,8 +19,26 @@ public class RivalAnalysisJob {
 			Job job = new Job(conf);
 			job.setJarByClass(RivalAnalysisJob.class);
 			job.setMapperClass(RivalMapper.class);
+			job.setReducerClass(RivalReducerPerChanell.class);
+			job.setMapOutputKeyClass(Text.class);
+			job.setMapOutputValueClass(IntWritable.class);
+			job.setInputFormatClass(TwitchDataInputFormat.class);
+			
+			Path outputPath = new Path(output);
+			FileInputFormat.setInputPaths(job, StringUtils.join(",", input));
+			FileOutputFormat.setOutputPath(job, outputPath);
+			outputPath.getFileSystem(conf).delete(outputPath, true);
+			job.waitForCompletion(true);
+		}
+		public static void runJob2(String[] input, String output) throws Exception {
+
+			Configuration conf = new Configuration();
+
+			Job job = new Job(conf, "Job1");
+			job.setJarByClass(RivalAnalysisJob.class);
+			job.setJarByClass(RivalAnalysisJob.class);
+			job.setMapperClass(RivalMapperBridge.class);
 			job.setReducerClass(RivalReducer.class);
-			job.setCombinerClass(RivalAnalysisCombiner.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
 			job.setInputFormatClass(TwitchDataInputFormat.class);
