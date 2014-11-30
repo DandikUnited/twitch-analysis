@@ -20,9 +20,9 @@ public class StreamLengthJob {
 			job.setJarByClass(StreamLengthJob.class);
 			job.setMapperClass(StreamLengthMapper.class);
 			job.setReducerClass(StreamLengthReducer.class);
-			//job.setCombinerClass(Plus18Combiner.class);
+			job.setCombinerClass(StreamLengthReducer.class);
 			job.setMapOutputKeyClass(Text.class);
-			job.setMapOutputValueClass(IntWritable.class);
+			job.setMapOutputValueClass(Text.class);
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
 			Path outputPath = new Path(output);
