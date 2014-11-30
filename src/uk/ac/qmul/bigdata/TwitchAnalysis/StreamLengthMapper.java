@@ -15,16 +15,17 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class StreamLengthMapper extends
-Mapper<Object, TwitchDataRecord, Text, IntWritable> {
+Mapper<Object, TwitchDataRecord, Text, Text> {
 
-	private final IntWritable ones = new IntWritable(1);
+	//private final IntWritable ones = new IntWritable(1);
 	public void map(Object key, TwitchDataRecord value, Context context)
 			throws IOException, InterruptedException {
 
 		String gameName = value.getStatus().toString().toLowerCase();
 		gameName = Normalizer.normalize(gameName, Normalizer.Form.NFD);
 		gameName = gameName.replaceAll("^\\u0000-\\u00FF", "");
-		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
+		
+		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(value.getTimeStamp().get()));
 		
 		String original = gameName;
 		
@@ -46,10 +47,10 @@ Mapper<Object, TwitchDataRecord, Text, IntWritable> {
 		
 		
 		//sb.toString().contains("fcacfc7a5aef79126409a07ecc71ad72")
-		if (gameName.contains("+18")) {
-			context.write(new Text(date), ones);
+		//if (gameName.contains("+18")) {
+			context.write(new Text(sb.toString()), new Text(date));
 
-		} 
+		//} 
 
 	}
 }
