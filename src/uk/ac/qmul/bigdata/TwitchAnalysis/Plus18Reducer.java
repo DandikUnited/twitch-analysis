@@ -1,29 +1,24 @@
 package uk.ac.qmul.bigdata.TwitchAnalysis;
 
 import java.io.IOException;
-
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class Plus18Reducer extends
-		Reducer<Text, IntWritable, Text, IntWritable> {
-	
-	private IntWritable result = new IntWritable(0);
-	
+Reducer<Text, IntWritable, Text, IntWritable> {
+
+	private IntWritable result ;
 
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
-		
+
 		int sum = 0;
 		for (IntWritable value : values) {
 			sum += value.get();
-
 		}
-		result.set(sum);
-		context.write(key, result);
-
+		result = new IntWritable(sum);		
+		context.write(key, result);	
 	}
 
 }

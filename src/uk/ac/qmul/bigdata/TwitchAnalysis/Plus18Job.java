@@ -21,7 +21,7 @@ public class Plus18Job {
 			job.setJarByClass(Plus18Job.class);
 			job.setMapperClass(Plus18Mapper.class);
 			job.setReducerClass(Plus18Reducer.class);
-			//job.setCombinerClass(Plus18Combiner.class);
+			job.setCombinerClass(Plus18Reducer.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(IntWritable.class);
 			job.setInputFormatClass(TwitchDataInputFormat.class);
