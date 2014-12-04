@@ -5,25 +5,26 @@ import java.util.Arrays;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.StringUtils;
-import org.apache.hadoop.io.NullWritable;
 
-public class Plus18Job {
+public class StreamerFirstAppearenceAnalysisJob {
 		public static void runJob(String[] input, String output) throws Exception {
 
 			Configuration conf = new Configuration();
 
 			Job job = new Job(conf);
-			job.setJarByClass(Plus18Job.class);
-			job.setMapperClass(Plus18Mapper.class);
-			job.setReducerClass(Plus18Reducer.class);
-			job.setCombinerClass(Plus18Reducer.class);
+			job.setJarByClass(StreamerFirstAppearenceAnalysisJob.class);
+			job.setMapperClass(StreamerFirstAppearenceMapper.class);
+			job.setReducerClass(StreamerFirstAppearenceReducer.class);
+			job.setCombinerClass(StreamerFirstAppearenceCombiner.class);
 			job.setMapOutputKeyClass(Text.class);
-			job.setMapOutputValueClass(IntWritable.class);
+			job.setMapOutputValueClass(LongWritable.class);
+			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
 			Path outputPath = new Path(output);
