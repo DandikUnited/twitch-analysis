@@ -17,7 +17,7 @@ Reducer<Text, LongWritable, Text, Text> {
 	public void reduce(Text key, Iterable<LongWritable> values, Context context)
 			throws IOException, InterruptedException {
 
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		LongWritable lowest = new LongWritable(Long.MAX_VALUE);
 
 		for(LongWritable i: values){

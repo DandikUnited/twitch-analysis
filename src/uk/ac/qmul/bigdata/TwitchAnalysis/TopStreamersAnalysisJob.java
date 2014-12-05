@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -19,10 +20,10 @@ public class TopStreamersAnalysisJob {
 			Job job = new Job(conf);
 			job.setJarByClass(TopStreamersAnalysisJob.class);
 			job.setMapperClass(TopStreamersMapper.class);
-			job.setCombinerClass(TopStreamersReducer.class);
-			job.setReducerClass(TopStreamersReducer.class);
+			job.setCombinerClass(DailyTopGameCombiner.class);
+			job.setReducerClass(DailyTopGameReducer.class);
 			job.setMapOutputKeyClass(Text.class);
-			job.setMapOutputValueClass(IntWritable.class);
+			job.setMapOutputValueClass(TextIntPair.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			

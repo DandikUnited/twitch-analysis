@@ -12,23 +12,20 @@ import org.apache.commons.lang.StringUtils;
 
 import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataRecord;
 
-public class MonthlyPopularityMapper extends
-Mapper<Object, TwitchDataRecord, Text, IntWritable> {
+public class DailyTopGameMapper extends
+Mapper<Object, TwitchDataRecord, Text, TextIntPair> {
 
 	private Text data = new Text();
 
 	public void map(Object key, TwitchDataRecord value, Context context)
 			throws IOException, InterruptedException {
 
-		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value
-				.getTimeStamp().get()));
-		String[] dateArray = date.split("-");
-		date = dateArray[1] +"-"+ dateArray[0];
-		if(StringUtils.isAlphanumericSpace(value.getGame().toString())){
-			String con = date + "\t" + value.getGame().toString().toLowerCase();
-			context.write(new Text(con), value.getViewers());
+		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
+		String game = value.getGame().toString().toLowerCase().replaceAll("[^A-Za-z0-9]", "");
+		if(game.length() > 0){
+			TextIntPair gameViewers = new TextIntPair(game, value.getViewers().get()); 
+			context.write(new Text(date), gameViewers);
 		}
-
 
 
 	}
