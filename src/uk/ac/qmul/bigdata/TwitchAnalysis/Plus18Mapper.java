@@ -14,12 +14,12 @@ Mapper<Object, TwitchDataRecord, Text, IntWritable> {
 	public void map(Object key, TwitchDataRecord value, Context context)
 			throws IOException, InterruptedException {
 
-		String gameName = value.getStatus().toString().toLowerCase();
-		gameName = Normalizer.normalize(gameName, Normalizer.Form.NFD);
-		gameName = gameName.replaceAll("^\\u0000-\\u00FF", "");
+		String streamName = value.getStatus().toString().toLowerCase();
+		streamName = Normalizer.normalize(streamName, Normalizer.Form.NFD);
+		streamName = streamName.replaceAll("^\\u0000-\\u00FF", "");
 		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date(value.getTimeStamp().get()));
 
-		if (gameName.contains("+18")) {
+		if (streamName.contains("+18")) {
 
 			context.write(new Text(date.toString().concat("-1")), ones);
 

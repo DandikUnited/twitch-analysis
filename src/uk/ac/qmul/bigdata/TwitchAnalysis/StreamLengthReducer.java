@@ -6,61 +6,100 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
-
-
+import org.apache.hadoop.mapreduce.Reducer.Context;
 
 public class StreamLengthReducer extends
-Reducer<Text, Text, Text, IntWritable> {
-	//K2:GameName V2:DateTime
-	private IntWritable streamDuration = new IntWritable(0);
-	private Text channelGUID = new Text();
+//Reducer<Text, LongWritable, Text, Text> {
 
+	/*public void reduce(Text key, Iterable<LongWritable> values, Context context)
+			throws IOException, InterruptedException {
 
-	public void reduce(Iterable<Text> key, Iterable<Text> values, Context context)
-			throws IOException, InterruptedException, ParseException {
+		//long diffSeconds=0,diffMinutes = 0,diffHours=0,diffDays=0;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date dStart = null, dStop= null;
+		String dateStart = "1989-12-09 00:00:00";
+		String dateStop = "2015-12-09 00:00:00";
+		try {
+			dStart =sdf.parse(dateStart);
+			dStop = sdf.parse(dateStop);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
 
-		SimpleDateFormat Format  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		for(LongWritable v: values){
 
-		for (Text k : key){
-			Date streamStarted = null, streamEnded = null;
-			Date dummyDate = Format.parse("12/09/1989") ;
-			for (Text value : values ){
-				try
-				{
-					Date date = Format.parse(value.toString());
-					if(dummyDate.before(date)){
-						streamEnded = date;
-						dummyDate = date;
-					}
+			try {
+				dStart =sdf.parse(dateStart);
+				dStop = sdf.parse(dateStop);
+			} catch (ParseException e2) {
+				e2.printStackTrace();
+			}
 
-					if(streamEnded.after(date)){
-						streamStarted = date;
+			Date date = new Date(v.get());
+			String StrDate = sdf.format(date);
+			try {
+				date = sdf.parse(StrDate);
+				dStart =sdf.parse(dateStart);
+				dStop = sdf.parse(dateStop);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 
+			if(date.after(dStart)){
+				dStart = date;
+			}
+		}
 
-					}
-				}
-				catch (java.text.ParseException ex)
-				{
-					ex.printStackTrace();
-				}
+		for(LongWritable v: values){
+			try {
+				dStart =sdf.parse(dateStart);
+				dStop = sdf.parse(dateStop);
+			} catch (ParseException e2) {
+				e2.printStackTrace();
+			}
 
+			Date date = new Date(v.get());
+			String StrDate = sdf.format(date);
+			try {
+				date = sdf.parse(StrDate);
+				dStart =sdf.parse(dateStart);
+				dStop = sdf.parse(dateStop);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 
-
-			}	
-			long diff = (((streamEnded.getTime() - streamStarted.getTime())/ (1000*60)) % 60);
-
-
-			streamDuration = new IntWritable((int)diff);
-			channelGUID = new Text(k);
-
-			context.write(channelGUID,streamDuration);
+			if(date.before(dStop)){
+				dStop = date;
+			}
 		}
 
 
 
+		Text streamDuration = new Text(dStart+" "+dStop);
+		context.write(key, streamDuration);
+
 
 	}
+}*/
+	
+	
+	//extends
+	Reducer<Text, Text, Text, Text> {
 
-}
+		private IntWritable result ;
+
+		public void reduce(Text key, Text values, Context context)
+				throws IOException, InterruptedException {
+
+/*			int sum = 0;
+			for (IntWritable value : values) {
+				sum += value.get();
+			}
+			result = new IntWritable(sum);		*/
+			context.write(key, values);	
+		}
+
+	}
