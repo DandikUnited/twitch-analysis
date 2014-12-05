@@ -8,7 +8,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class RivalMapper extends
+public class RivalAnalysisMapperOne extends
 		Mapper<Object, TwitchDataRecord, Text, IntWritable> {
 
 	private Text data = new Text();

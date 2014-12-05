@@ -7,7 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class RivalMapperBridge extends Mapper<Object, Object, Text, IntWritable>{
+public class RivalAnalysisMapperTwo extends Mapper<Object, Object, Text, IntWritable>{
 	
 
 	public void map(Object key, Object value, Context context)

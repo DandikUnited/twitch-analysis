@@ -13,16 +13,16 @@ import org.apache.hadoop.util.StringUtils;
 
 import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataInputFormat;
 
-public class MonthlyPopularityJob {
+public class TrendsForEachGameJob {
 	public static void runJob(String[] input, String output) throws Exception {
 
 		Configuration conf = new Configuration();
 
 		Job job = new Job(conf);
-		job.setJarByClass(MonthlyPopularityJob.class);
-		job.setMapperClass(MonthlyPopularityMapper.class);
-		job.setCombinerClass(MonthlyPopularityReducer.class);
-		job.setReducerClass(MonthlyPopularityReducer.class);
+		job.setJarByClass(TrendsForEachGameJob.class);
+		job.setMapperClass(TrendsForEachGameMapper.class);
+		job.setCombinerClass(TrendsForEachGameReducer.class);
+		job.setReducerClass(TrendsForEachGameReducer.class);
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(IntWritable.class);
 		job.setInputFormatClass(TwitchDataInputFormat.class);

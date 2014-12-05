@@ -28,8 +28,8 @@ public class RivalAnalysisJob {
 		
 		
 		job1.setJarByClass(RivalAnalysisJob.class);
-		job1.setMapperClass(RivalMapper.class);
-		job1.setReducerClass(RivalReducerPerChanell.class);
+		job1.setMapperClass(RivalAnalysisMapperOne.class);
+		job1.setReducerClass(RivalAnalysisReducerOne.class);
 		job1.setMapOutputKeyClass(Text.class);
 		job1.setMapOutputValueClass(IntWritable.class);
 		job1.setOutputKeyClass(Text.class);
@@ -49,8 +49,8 @@ public class RivalAnalysisJob {
 		Job job2 = cJob2.getJob();
 		cJob2.addDependingJob(cJob1);
 		job2.setJarByClass(RivalAnalysisJob.class);
-		job2.setMapperClass(RivalMapperBridge.class);
-		job2.setReducerClass(RivalReducer.class);
+		job2.setMapperClass(RivalAnalysisMapperTwo.class);
+		job2.setReducerClass(RivalAnalysisReducerTwo.class);
 		job2.setMapOutputKeyClass(Text.class);
 		job2.setMapOutputValueClass(IntWritable.class);
 		job2.setOutputKeyClass(Text.class);

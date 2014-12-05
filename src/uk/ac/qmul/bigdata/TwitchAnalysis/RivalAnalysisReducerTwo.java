@@ -4,32 +4,25 @@ import java.io.IOException;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class RivalReducerPerChanell extends
+public class RivalAnalysisReducerTwo extends
 		Reducer<Text, IntWritable, Text, IntWritable> {
-
-	private IntWritable result;
+	
+	private IntWritable result = new IntWritable(0);
+	
 
 	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
-
-		int peak = 0;
-
+		
+		int sum = 0;
 		for (IntWritable value : values) {
-
-			if (peak < value.get()) {
-				peak = value.get();
-			}
+			sum += value.get();
 
 		}
-		String[] keyParts = key.toString().split("\t");
-		key = new Text(keyParts[1] + "\t" + keyParts[2]);
-
-		result = new IntWritable(peak);
+		result.set(sum);
 		context.write(key, result);
 
 	}
+
 }

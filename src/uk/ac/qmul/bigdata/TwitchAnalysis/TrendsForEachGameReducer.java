@@ -7,7 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class MonthlyPopularityReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class TrendsForEachGameReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 	
 	private IntWritable result = new IntWritable(0);
 	

@@ -12,7 +12,7 @@ import org.apache.commons.lang.StringUtils;
 
 import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataRecord;
 
-public class MonthlyPopularityMapper extends
+public class TrendsForEachGameMapper extends
 Mapper<Object, TwitchDataRecord, Text, IntWritable> {
 
 	private Text data = new Text();
