@@ -11,10 +11,29 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class StreamLengthReducer extends
+public class StreamLengthReducer extends	Reducer<Text, IntWritable, Text, IntWritable> {
+
+	private IntWritable result;
+
+	public void reduce(Text key, Iterable<IntWritable> values, Context context)
+			throws IOException, InterruptedException {
+
+					int sum = 0;
+		for (IntWritable value : values) {
+			sum += value.get();
+		}
+		result = new IntWritable(sum);		
+		context.write(key, result);	
+	}
+
+}
+
+
+
+
 //Reducer<Text, LongWritable, Text, Text> {
 
-	/*public void reduce(Text key, Iterable<LongWritable> values, Context context)
+/*public void reduce(Text key, Iterable<LongWritable> values, Context context)
 			throws IOException, InterruptedException {
 
 		//long diffSeconds=0,diffMinutes = 0,diffHours=0,diffDays=0;
@@ -84,22 +103,6 @@ public class StreamLengthReducer extends
 
 	}
 }*/
-	
-	
-	//extends
-	Reducer<Text, Text, Text, Text> {
 
-		private IntWritable result ;
 
-		public void reduce(Text key, Text values, Context context)
-				throws IOException, InterruptedException {
-
-/*			int sum = 0;
-			for (IntWritable value : values) {
-				sum += value.get();
-			}
-			result = new IntWritable(sum);		*/
-			context.write(key, values);	
-		}
-
-	}
+//extends

@@ -22,12 +22,12 @@ public class StreamLengthJob {
 			job.setJarByClass(StreamLengthJob.class);
 			job.setMapperClass(StreamLengthMapper.class);
 			job.setReducerClass(StreamLengthReducer.class);
-			//job.setCombinerClass(StreamLengthCombiner.class);
+			job.setCombinerClass(StreamLengthReducer.class);
 			//job.setNumReduceTasks(5);
 			job.setMapOutputKeyClass(Text.class);
-			job.setMapOutputValueClass(Text.class);
+			job.setMapOutputValueClass(IntWritable.class);
 			job.setOutputKeyClass(Text.class);
-			job.setOutputValueClass(Text.class);
+			job.setOutputValueClass(IntWritable.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
