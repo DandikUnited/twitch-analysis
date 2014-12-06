@@ -27,6 +27,7 @@ public class ViewersGrowthAnalysisJob {
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
+			
 			Path outputPath = new Path(output);
 			FileInputFormat.setInputPaths(job, StringUtils.join(",", input));
 			FileOutputFormat.setOutputPath(job, outputPath);
