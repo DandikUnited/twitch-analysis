@@ -13,16 +13,15 @@ import org.apache.hadoop.util.StringUtils;
 
 import uk.ac.qmul.bigdata.TwitchAnalysis.TwitchDataInputFormat;
 
-public class DailyTopGameJob {
+public class WeeklyTopGameAnalysisJob {
 	public static void runJob(String[] input, String output) throws Exception {
 
 		Configuration conf = new Configuration();
 
 		Job job = new Job(conf);
-		job.setJarByClass(DailyTopGameJob.class);
-		job.setMapperClass(DailyTopGameMapper.class);
-		job.setCombinerClass(DailyTopGameCombiner.class);
-		job.setReducerClass(DailyTopGameReducer.class);
+		job.setJarByClass(WeeklyTopGameAnalysisJob.class);
+		job.setMapperClass(WeeklyTopGameMapper.class);
+		job.setReducerClass(WeeklyTopReducer.class);
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(TextIntPair.class);
 		job.setInputFormatClass(TwitchDataInputFormat.class);

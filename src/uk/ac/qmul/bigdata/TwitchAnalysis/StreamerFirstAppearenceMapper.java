@@ -14,7 +14,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 public class StreamerFirstAppearenceMapper extends Mapper<Object, TwitchDataRecord, Text, LongWritable> { 
 	    public void map(Object key, TwitchDataRecord value, Context context) throws IOException, InterruptedException {
-	    	//new SimpleDateFormat("yyyy-MM").format(new Date(value.getTimeStamp().get()));
 	    	context.write(value.getUser(), value.getTimeStamp());
 	    }
 }

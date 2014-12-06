@@ -12,18 +12,17 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.StringUtils;
 
-public class StreamerFirstAppearenceAnalysisJob {
+public class WeeklyTopStreamersAnalysisJob {
 		public static void runJob(String[] input, String output) throws Exception {
 
 			Configuration conf = new Configuration();
 
 			Job job = new Job(conf);
-			job.setJarByClass(StreamerFirstAppearenceAnalysisJob.class);
-			job.setMapperClass(StreamerFirstAppearenceMapper.class);
-			job.setReducerClass(StreamerFirstAppearenceReducer.class);
-			job.setCombinerClass(StreamerFirstAppearenceCombiner.class);
+			job.setJarByClass(WeeklyTopStreamersAnalysisJob.class);
+			job.setMapperClass(WeeklyTopStreamersMapper.class);
+			job.setReducerClass(WeeklyTopReducer.class);
 			job.setMapOutputKeyClass(Text.class);
-			job.setMapOutputValueClass(LongWritable.class);
+			job.setMapOutputValueClass(TextIntPair.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
