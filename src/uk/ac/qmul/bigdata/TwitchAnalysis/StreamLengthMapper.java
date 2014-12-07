@@ -258,7 +258,7 @@ Mapper<Object, TwitchDataRecord, Text, LongWritable> {
 		//}
 		
 		
-		Text bigKey = new Text(filteredIntermediateResult+"\t"+streamOwner+"\t"+streamName+"\t"+streamDate);
+		Text bigKey = new Text(filteredIntermediateResultString+"\t"+streamOwner+"\t"+streamName+"\t"+streamDate);
 
 		context.write(bigKey,dateLong);
 
