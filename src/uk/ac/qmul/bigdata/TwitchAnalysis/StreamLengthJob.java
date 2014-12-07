@@ -26,8 +26,8 @@ public class StreamLengthJob {
 			job.setCombinerClass(StreamLengthReducer.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(LongWritable.class);
-			job.setOutputKeyClass(Text.class);
-			job.setOutputValueClass(LongWritable.class);
+			//job.setOutputKeyClass(Text.class);
+			//job.setOutputValueClass(LongWritable.class);
 			
 			job.setInputFormatClass(TwitchDataInputFormat.class);
 			
