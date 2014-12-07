@@ -28,10 +28,6 @@ public class StreamLengthReducer extends	Reducer<Text, LongWritable, Text, LongW
 	}
 		
 }
-
-
-
-
 //Reducer<Text, LongWritable, Text, Text> {
 
 /*public void reduce(Text key, Iterable<LongWritable> values, Context context)
@@ -104,6 +100,3 @@ public class StreamLengthReducer extends	Reducer<Text, LongWritable, Text, LongW
 
 	}
 }*/
-
-
-//extends
