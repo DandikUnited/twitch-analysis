@@ -22,8 +22,7 @@ public class StreamLengthJob {
 			job.setJarByClass(StreamLengthJob.class);
 			job.setMapperClass(StreamLengthMapper.class);
 			job.setReducerClass(StreamLengthReducer.class);
-			job.setNumReduceTasks(31);
-			job.setPartitionerClass(StreamLengthPartitioner.class);
+			//job.setPartitionerClass(StreamLengthPartitioner.class);
 			job.setCombinerClass(StreamLengthReducer.class);
 			job.setMapOutputKeyClass(Text.class);
 			job.setMapOutputValueClass(LongWritable.class);

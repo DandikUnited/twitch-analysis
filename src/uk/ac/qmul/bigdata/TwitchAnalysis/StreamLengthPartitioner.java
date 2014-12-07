@@ -10,21 +10,21 @@ import org.apache.hadoop.io.Text;
  
         public int getPartition(Text key, LongWritable value, int numReduceTasks) {
  
-            String [] bigKey = key.toString().split("\t");
-            String gameName = bigKey[0];
+            String gameName = key.toString();//.split("\t");
+            //String gameName = bigKey[0];
                        
             //this is done to avoid performing mod with 0
             if(numReduceTasks == 0)
                 return 0;
  
             if (gameName == "leagueoflegends"){
-            	return 0 % numReduceTasks;
+            	return 0;
             	}
             	if (gameName == "minecraft"){
-            	return 1 % numReduceTasks;
+            	return 1;
             	}
             	if (gameName == "worldofwarcraftmistsofpandaria"){
-            	return 2 % numReduceTasks;
+            	return 2;
             	}
             	if (gameName == "counterstrikeglobaloffensive"){
             	return 3 % numReduceTasks;
@@ -317,7 +317,7 @@ import org.apache.hadoop.io.Text;
             	if (gameName == "killerinstinct"){
             	return 99 % numReduceTasks;
             	}
-            	else return 31;
+            	else return 100;
 
         }
 

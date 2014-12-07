@@ -50,214 +50,215 @@ Mapper<Object, TwitchDataRecord, Text, LongWritable> {
 		}*/
 
 		//get the most popular 100 streams by game type
-		while (tokened.hasMoreTokens()){
-			switch (tokened.nextToken().toLowerCase()){
+		//while (tokened.hasMoreTokens()){
+			switch (gameName){
 			case "leagueoflegends":
-				filteredIntermediateResultString = "leagueoflegends" ;break;
+				filteredIntermediateResultString = "leagueoflegends"; filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "minecraft":
-				filteredIntermediateResultString = "minecraft" ;break;
+				filteredIntermediateResultString = "minecraft" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "worldofwarcraftmistsofpandaria":
-				filteredIntermediateResultString = "worldofwarcraftmistsofpandaria" ;break;
+				filteredIntermediateResultString = "worldofwarcraftmistsofpandaria" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "counterstrikeglobaloffensive":
-				filteredIntermediateResultString = "counterstrikeglobaloffensive" ;break;
+				filteredIntermediateResultString = "counterstrikeglobaloffensive" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "callofdutyghosts":
-				filteredIntermediateResultString = "callofdutyghosts" ;break;
+				filteredIntermediateResultString = "callofdutyghosts" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "dota2":
-				filteredIntermediateResultString = "dota2" ;break;
+				filteredIntermediateResultString = "dota2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "battlefield4":
-				filteredIntermediateResultString = "battlefield4" ;break;
+				filteredIntermediateResultString = "battlefield4" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "fifa14":
-				filteredIntermediateResultString = "fifa14" ;break;
+				filteredIntermediateResultString = "fifa14" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "hearthstoneheroesofwarcraft":
-				filteredIntermediateResultString = "hearthstoneheroesofwarcraft" ;break;
+				filteredIntermediateResultString = "hearthstoneheroesofwarcraft" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "diabloiiireaperofsouls":
-				filteredIntermediateResultString = "diabloiiireaperofsouls" ;break;
+				filteredIntermediateResultString = "diabloiiireaperofsouls" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "callofdutyblackopsii":
-				filteredIntermediateResultString = "callofdutyblackopsii" ;break;
+				filteredIntermediateResultString = "callofdutyblackopsii" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "dayz":
-				filteredIntermediateResultString = "dayz" ;break;
+				filteredIntermediateResultString = "dayz" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "titanfall":
-				filteredIntermediateResultString = "titanfall" ;break;
+				filteredIntermediateResultString = "titanfall" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "smite":
-				filteredIntermediateResultString = "smite" ;break;
+				filteredIntermediateResultString = "smite" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "watchdogsa":
-				filteredIntermediateResultString = "watchdogsa" ;break;
+				filteredIntermediateResultString = "watchdogsa" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "starcraftiiheartoftheswarm":
-				filteredIntermediateResultString = "starcraftiiheartoftheswarm" ;break;
+				filteredIntermediateResultString = "starcraftiiheartoftheswarm" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "darksoulsii":
-				filteredIntermediateResultString = "darksoulsii" ;break;
+				filteredIntermediateResultString = "darksoulsii" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "runescape":
-				filteredIntermediateResultString = "runescape" ;break;
+				filteredIntermediateResultString = "runescape" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "nba2k14":
-				filteredIntermediateResultString = "nba2k14" ;break;
+				filteredIntermediateResultString = "nba2k14" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "worldoftanks":
-				filteredIntermediateResultString = "worldoftanks" ;break;
+				filteredIntermediateResultString = "worldoftanks" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "armaiii":
-				filteredIntermediateResultString = "armaiii" ;break;
+				filteredIntermediateResultString = "armaiii" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "diabloiii":
-				filteredIntermediateResultString = "diabloiii" ;break;
+				filteredIntermediateResultString = "diabloiii" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "destiny":
-				filteredIntermediateResultString = "destiny" ;break;
+				filteredIntermediateResultString = "destiny" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "wildstar":
-				filteredIntermediateResultString = "wildstar" ;break;
+				filteredIntermediateResultString = "wildstar" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "pathofexile":
-				filteredIntermediateResultString = "pathofexile" ;break;
+				filteredIntermediateResultString = "pathofexile" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "outlast":
-				filteredIntermediateResultString = "outlast" ;break;
+				filteredIntermediateResultString = "outlast" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "thelastofusaremastered":
-				filteredIntermediateResultString = "thelastofusaremastered" ;break;
+				filteredIntermediateResultString = "thelastofusaremastered" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "finalfantasyxivonlinearealmreborn":
-				filteredIntermediateResultString = "finalfantasyxivonlinearealmreborn" ;break;
+				filteredIntermediateResultString = "finalfantasyxivonlinearealmreborn" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "osu":
-				filteredIntermediateResultString = "osu" ;break;
+				filteredIntermediateResultString = "osu" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "theelderscrollsonline":
-				filteredIntermediateResultString = "theelderscrollsonline" ;break;
+				filteredIntermediateResultString = "theelderscrollsonline" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "grandtheftautov":
-				filteredIntermediateResultString = "grandtheftautov" ;break;
+				filteredIntermediateResultString = "grandtheftautov" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "warframe":
-				filteredIntermediateResultString = "warframe" ;break;
+				filteredIntermediateResultString = "warframe" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "destinybeta":
-				filteredIntermediateResultString = "destinybeta" ;break;
+				filteredIntermediateResultString = "destinybeta" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "maddennfl25":
-				filteredIntermediateResultString = "maddennfl25" ;break;
+				filteredIntermediateResultString = "maddennfl25" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "assassinscreedivblackflag":
-				filteredIntermediateResultString = "assassinscreedivblackflag" ;break;
+				filteredIntermediateResultString = "assassinscreedivblackflag" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "darksouls":
-				filteredIntermediateResultString = "darksouls" ;break;
+				filteredIntermediateResultString = "darksouls" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "finalfantasyxivarealmreborn":
-				filteredIntermediateResultString = "finalfantasyxivarealmreborn" ;break;
+				filteredIntermediateResultString = "finalfantasyxivarealmreborn" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "guildwars2":
-				filteredIntermediateResultString = "guildwars2" ;break;
+				filteredIntermediateResultString = "guildwars2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "teamfortress2":
-				filteredIntermediateResultString = "teamfortress2" ;break;
+				filteredIntermediateResultString = "teamfortress2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "archeage":
-				filteredIntermediateResultString = "archeage" ;break;
+				filteredIntermediateResultString = "archeage" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "rust":
-				filteredIntermediateResultString = "rust" ;break;
+				filteredIntermediateResultString = "rust" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "worldofwarcraft":
-				filteredIntermediateResultString = "worldofwarcraft" ;break;
+				filteredIntermediateResultString = "worldofwarcraft" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "theelderscrollsvskyrim":
-				filteredIntermediateResultString = "theelderscrollsvskyrim" ;break;
+				filteredIntermediateResultString = "theelderscrollsvskyrim" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "infestationsurvivorstories":
-				filteredIntermediateResultString = "infestationsurvivorstories" ;break;
+				filteredIntermediateResultString = "infestationsurvivorstories" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "garrysmod":
-				filteredIntermediateResultString = "garrysmod" ;break;
+				filteredIntermediateResultString = "garrysmod" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "watchdogs":
-				filteredIntermediateResultString = "watchdogs" ;break;
+				filteredIntermediateResultString = "watchdogs" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "infamoussecondsona":
-				filteredIntermediateResultString = "infamoussecondsona" ;break;
+				filteredIntermediateResultString = "infamoussecondsona" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "borderlands2":
-				filteredIntermediateResultString = "borderlands2" ;break;
+				filteredIntermediateResultString = "borderlands2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "heroesofthestorm":
-				filteredIntermediateResultString = "heroesofthestorm" ;break;
+				filteredIntermediateResultString = "heroesofthestorm" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "callofdutyghostsgoldedition":
-				filteredIntermediateResultString = "callofdutyghostsgoldedition" ;break;
+				filteredIntermediateResultString = "callofdutyghostsgoldedition" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "warthunder":
-				filteredIntermediateResultString = "warthunder" ;break;
+				filteredIntermediateResultString = "warthunder" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "callofdutyaghosts":
-				filteredIntermediateResultString = "callofdutyaghosts" ;break;
+				filteredIntermediateResultString = "callofdutyaghosts" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "payday2":
-				filteredIntermediateResultString = "payday2" ;break;
+				filteredIntermediateResultString = "payday2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "dcuniverseonline":
-				filteredIntermediateResultString = "dcuniverseonline" ;break;
+				filteredIntermediateResultString = "dcuniverseonline" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "forzamotorsport5":
-				filteredIntermediateResultString = "forzamotorsport5" ;break;
+				filteredIntermediateResultString = "forzamotorsport5" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "maddennfl15":
-				filteredIntermediateResultString = "maddennfl15" ;break;
+				filteredIntermediateResultString = "maddennfl15" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "tera":
-				filteredIntermediateResultString = "tera" ;break;
+				filteredIntermediateResultString = "tera" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "starwarstheoldrepublic":
-				filteredIntermediateResultString = "starwarstheoldrepublic" ;break;
+				filteredIntermediateResultString = "starwarstheoldrepublic" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "thebindingofisaac":
-				filteredIntermediateResultString = "thebindingofisaac" ;break;
+				filteredIntermediateResultString = "thebindingofisaac" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "pokamonxy":
-				filteredIntermediateResultString = "pokamonxy" ;break;
+				filteredIntermediateResultString = "pokamonxy" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "planetside2":
-				filteredIntermediateResultString = "planetside2" ;break;
+				filteredIntermediateResultString = "planetside2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "trialsfusion":
-				filteredIntermediateResultString = "trialsfusion" ;break;
+				filteredIntermediateResultString = "trialsfusion" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "heroesofnewerth":
-				filteredIntermediateResultString = "heroesofnewerth" ;break;
+				filteredIntermediateResultString = "heroesofnewerth" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "plantsvszombiesgardenwarfare":
-				filteredIntermediateResultString = "plantsvszombiesgardenwarfare" ;break;
+				filteredIntermediateResultString = "plantsvszombiesgardenwarfare" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "apbreloaded":
-				filteredIntermediateResultString = "apbreloaded" ;break;
+				filteredIntermediateResultString = "apbreloaded" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "eurotrucksimulator2":
-				filteredIntermediateResultString = "eurotrucksimulator2" ;break;
+				filteredIntermediateResultString = "eurotrucksimulator2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "halo3":
-				filteredIntermediateResultString = "halo3" ;break;
+				filteredIntermediateResultString = "halo3" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "southparkthestickoftruth":
-				filteredIntermediateResultString = "southparkthestickoftruth" ;break;
+				filteredIntermediateResultString = "southparkthestickoftruth" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "easportsaufca":
-				filteredIntermediateResultString = "easportsaufca" ;break;
+				filteredIntermediateResultString = "easportsaufca" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "metalgearsolidvgroundzeroes":
-				filteredIntermediateResultString = "metalgearsolidvgroundzeroes" ;break;
+				filteredIntermediateResultString = "metalgearsolidvgroundzeroes" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "thief":
-				filteredIntermediateResultString = "thief" ;break;
+				filteredIntermediateResultString = "thief" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "unturned":
-				filteredIntermediateResultString = "unturned" ;break;
+				filteredIntermediateResultString = "unturned" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "left4dead2":
-				filteredIntermediateResultString = "left4dead2" ;break;
+				filteredIntermediateResultString = "left4dead2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "infamousasecondson":
-				filteredIntermediateResultString = "infamousasecondson" ;break;
+				filteredIntermediateResultString = "infamousasecondson" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "clashofclans":
-				filteredIntermediateResultString = "clashofclans" ;break;
+				filteredIntermediateResultString = "clashofclans" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "supermario64":
-				filteredIntermediateResultString = "supermario64" ;break;
+				filteredIntermediateResultString = "supermario64" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "magicthegathering":
-				filteredIntermediateResultString = "magicthegathering" ;break;
+				filteredIntermediateResultString = "magicthegathering" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "mlba14theshowa":
-				filteredIntermediateResultString = "mlba14theshowa" ;break;
+				filteredIntermediateResultString = "mlba14theshowa" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "dawngate":
-				filteredIntermediateResultString = "dawngate" ;break;
+				filteredIntermediateResultString = "dawngate" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "kerbalspaceprogram":
-				filteredIntermediateResultString = "kerbalspaceprogram" ;break;
+				filteredIntermediateResultString = "kerbalspaceprogram" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "thelegendofzeldaocarinaoftime":
-				filteredIntermediateResultString = "thelegendofzeldaocarinaoftime" ;break;
+				filteredIntermediateResultString = "thelegendofzeldaocarinaoftime" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "deadrising3":
-				filteredIntermediateResultString = "deadrising3" ;break;
+				filteredIntermediateResultString = "deadrising3" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "pt":
-				filteredIntermediateResultString = "pt" ;break;
+				filteredIntermediateResultString = "pt" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "battlefield3":
-				filteredIntermediateResultString = "battlefield3" ;break;
+				filteredIntermediateResultString = "battlefield3" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "diabloiiireaperofsoulsaultimateeviledition":
-				filteredIntermediateResultString = "diabloiiireaperofsoulsaultimateeviledition" ;break;
+				filteredIntermediateResultString = "diabloiiireaperofsoulsaultimateeviledition" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "needforspeedrivals":
-				filteredIntermediateResultString = "needforspeedrivals" ;break;
+				filteredIntermediateResultString = "needforspeedrivals" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "deadnationaapocalypseedition":
-				filteredIntermediateResultString = "deadnationaapocalypseedition" ;break;
+				filteredIntermediateResultString = "deadnationaapocalypseedition" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "destinyfirstlookalpha":
-				filteredIntermediateResultString = "destinyfirstlookalpha" ;break;
+				filteredIntermediateResultString = "destinyfirstlookalpha" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "mygreatgame":
-				filteredIntermediateResultString = "mygreatgame" ;break;
+				filteredIntermediateResultString = "mygreatgame" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "mariokart8":
-				filteredIntermediateResultString = "mariokart8" ;break;
+				filteredIntermediateResultString = "mariokart8" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "terraria":
-				filteredIntermediateResultString = "terraria" ;break;
+				filteredIntermediateResultString = "terraria" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "wolfensteintheneworder":
-				filteredIntermediateResultString = "wolfensteintheneworder" ;break;
+				filteredIntermediateResultString = "wolfensteintheneworder" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "eveonline":
-				filteredIntermediateResultString = "eveonline" ;break;
+				filteredIntermediateResultString = "eveonline" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "tombraiderdefinitiveedition":
-				filteredIntermediateResultString = "tombraiderdefinitiveedition" ;break;
+				filteredIntermediateResultString = "tombraiderdefinitiveedition" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "killzoneshadowfall":
-				filteredIntermediateResultString = "killzoneshadowfall" ;break;
+				filteredIntermediateResultString = "killzoneshadowfall" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "diabloiiireaperofsoulsaultimateevileditionenglish":
-				filteredIntermediateResultString = "diabloiiireaperofsoulsaultimateevileditionenglish" ;break;
+				filteredIntermediateResultString = "diabloiiireaperofsoulsaultimateevileditionenglish" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "dontstarveconsoleedition":
-				filteredIntermediateResultString = "dontstarveconsoleedition" ;break;
+				filteredIntermediateResultString = "dontstarveconsoleedition" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "companyofheroes2":
-				filteredIntermediateResultString = "companyofheroes2" ;break;
+				filteredIntermediateResultString = "companyofheroes2" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "sniperelite3":
-				filteredIntermediateResultString = "sniperelite3" ;break;
+				filteredIntermediateResultString = "sniperelite3" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "killerinstinct":
-				filteredIntermediateResultString = "killerinstinct" ;break;
+				filteredIntermediateResultString = "killerinstinct" ;filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			default:
 			}
-		}
+			
+		//}
 		
-		filteredIntermediateResult.set(filteredIntermediateResultString);
-		Text bigKey = new Text(filteredIntermediateResult);//+"\t"+streamOwner+"\t"+streamName+"\t"+streamDate);
+		
+		Text bigKey = new Text(filteredIntermediateResult+"\t"+streamOwner+"\t"+streamName+"\t"+streamDate);
 
 		context.write(bigKey,dateLong);
 
