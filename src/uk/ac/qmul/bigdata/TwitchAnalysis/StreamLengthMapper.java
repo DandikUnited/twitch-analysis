@@ -25,12 +25,13 @@ Mapper<Object, TwitchDataRecord, Text, LongWritable> {
 		StringTokenizer tokened = new StringTokenizer(gameName);
 		LongWritable dateLong = value.getTimeStamp();
 		String streamName = value.getDisplayName().toString();
+		String streamOwner = value.getUser().toString();
 		
 		Date date=new Date(value.getTimeStamp().get());
         SimpleDateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
         		
 		String streamDate = df2.format(date);
-		String streamOwner = value.getUser().toString();
+		
 		/*String uniqueStream = value.getUser().toString();
 		uniqueStream = uniqueStream.concat(value.getDisplayName().toString());
 		uniqueStream = uniqueStream.concat(date.substring(10));
@@ -50,8 +51,8 @@ Mapper<Object, TwitchDataRecord, Text, LongWritable> {
 		}*/
 
 		//get the most popular 100 streams by game type
-		//while (tokened.hasMoreTokens()){
-			switch (gameName){
+		while (tokened.hasMoreTokens()){
+			switch (tokened.nextToken()){
 			case "leagueoflegends":
 				filteredIntermediateResultString = "leagueoflegends"; filteredIntermediateResult.set(filteredIntermediateResultString);break;
 			case "minecraft":
@@ -255,7 +256,7 @@ Mapper<Object, TwitchDataRecord, Text, LongWritable> {
 			default:
 			}
 			
-		//}
+		}
 		
 		
 		Text bigKey = new Text(filteredIntermediateResultString+"\t"+streamOwner+"\t"+streamName+"\t"+streamDate);
